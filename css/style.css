@@ -1,0 +1,519 @@
+/* Importar fonte Nunito Sans */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+/* Set base font and background - Define fonte e fundo base */
+body {
+  font-family: "Nunito Sans", sans-serif;
+  line-height: 1.5;
+  background-color: #fff; /* Cor de fundo branco */
+  color: #333; /* Cor do texto para combinar com o logotipo */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Paleta de Cores */
+:root {
+  --primary-color: #f22522; /* Cor principal */
+  --complementary-color-1: #2abfae; /* Azul complementar */
+  --complementary-color-2: #2abf48; /* Amarelo complementar */
+  --complementary-color-3: #bf3e2a; /* Vermelho escuro complementar */
+  --complementary-color-4: #40302e; /* Azul acinzentado complementar */
+  --complementary-color-5: #2e403e; /* Verde acinzentado complementar */
+  --complementary-color-6: #2e4032; /* Verde acinzentado complementar */
+
+  --monochromatic-1: #c8403d; /* Vermelho monocromático mais claro */
+  --monochromatic-2: #9d4c4a; /* Vermelho monocromático mais escuro */
+  --monochromatic-3: #f22522; /* Vermelho monocromático principal */
+  --monochromatic-4: #483b3a; /* Cinza escuro monocromático */
+  --monochromatic-5: #332a2a; /* Cinza muito escuro monocromático */
+
+  --shadow-1: #ea2421; /* Sombra clara */
+  --shadow-2: #c81f1c; /* Sombra média */
+  --shadow-3: #f22522; /* Sombra principal */
+  --shadow-4: #a61a17; /* Sombra escura */
+  --shadow-5: #841412; /* Sombra mais escura */
+  --shadow-6: #620f0e; /* Sombra muito escura */
+}
+
+/* Estilo do cabeçalho */
+/* Estilo do cabeçalho */
+.header {
+  background-color: #fff; /* Fundo branco */
+  border-bottom: 1px solid var(--shadow-2); /* Borda inferior com sombra média */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra abaixo do cabeçalho */
+  height: 66px; /* Altura do cabeçalho */
+  display: flex;
+  align-items: center; /* Alinhamento vertical centralizado */
+  transition: height 0.6s ease-in-out; /* Transição mais lenta e suave */
+  display: flex;
+  justify-content: center;
+}
+
+.header--scrolled {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 52.8px; /* Diminuir altura em 20% */
+  transition: height 0.6s ease-in-out; /* Transição mais lenta e suave */
+  z-index: 1000; /* Garante que o cabeçalho esteja acima de outros elementos */
+}
+
+/* Container centralizado para conteúdo */
+.container-row {
+  width: 82%; /* 82% da largura da tela */
+  /* margin: 0 auto; Centraliza o container */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Espaça elementos para as extremidades */
+  align-items: center; /* Alinhamento vertical centralizado */
+  height: 100%; /* Garante que o container tenha 100% da altura do cabeçalho */
+}
+
+/* Estilo do logotipo */
+.logo a img {
+  height: 60px; /* Ajusta a altura da imagem do logotipo */
+  padding-top: 7px;
+  transition: height 0.6s ease-in-out; /* Transição suave para a altura */
+}
+
+.header--scrolled .logo a img {
+  height: 48px; /* Diminuir altura em 20% */
+}
+
+/* Estilo da navegação */
+.nav {
+  display: flex;
+  flex: 1;
+  justify-content: center; /* Centraliza o menu de navegação */
+  height: 100%; /* Garante que a navegação tenha 100% da altura do cabeçalho */
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px; /* Espaçamento entre itens de navegação */
+  align-items: center; /* Alinhamento vertical centralizado */
+  height: 100%;
+}
+
+.nav-item {
+  list-style: none; /* Remove marcadores de lista */
+}
+
+/* Estilo dos links de navegação */
+.nav-link {
+  font-size: 1rem;
+  color: var(--complementary-color-4); /* Cor dos links */
+  text-decoration: none;
+  padding: 5px 10px; /* Espaçamento interno dos links */
+  display: flex;
+  align-items: center; /* Alinhamento vertical centralizado */
+  height: 100%;
+  transition: font-size 0.3s ease-in-out; /* Transição suave para o tamanho da fonte */
+}
+
+.header--scrolled .nav-link {
+  font-size: 0.8rem; /* Diminuir tamanho da fonte em 20% */
+}
+
+/* Estilo dos links ao passar o mouse */
+.nav-link:hover {
+  color: var(--primary-color); /* Cor dos links ao passar o mouse */
+}
+
+/* Estilo do link ativo */
+.nav-link.active {
+  background-color: var(--primary-color); /* Fundo para o link ativo */
+  color: #fff; /* Cor clara para o texto do link ativo */
+  border-radius: 5px; /* Borda arredondada */
+}
+
+/* Estilo dos links sociais */
+.social-links {
+  display: flex;
+  align-items: center; /* Alinhamento vertical centralizado */
+  gap: 15px; /* Espaçamento entre ícones sociais */
+  height: 100%;
+}
+
+/* Estilo dos ícones sociais */
+.social-link {
+  font-size: 1rem; /* Tamanho dos ícones */
+  color: var(--complementary-color-4); /* Cor dos ícones */
+  text-decoration: none;
+  display: flex;
+  align-items: center; /* Alinhamento vertical centralizado */
+  height: 100%;
+  transition: font-size 0.3s ease-in-out; /* Transição suave para o tamanho da fonte */
+}
+
+.header--scrolled .social-link {
+  font-size: 0.8rem; /* Diminuir tamanho dos ícones em 20% */
+}
+
+/* Estilo do link do GitHub */
+.github-link {
+  border: 1px solid var(--shadow-2); /* Borda do link do GitHub */
+  padding: 5px 10px; /* Espaçamento interno do link do GitHub */
+  border-radius: 5px; /* Borda arredondada */
+  display: flex;
+  align-items: center; /* Alinhamento vertical centralizado */
+  color: var(--complementary-color-4); /* Cor do link do GitHub */
+  text-decoration: none;
+  height: auto; /* Altura ajustada */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  transition: font-size 0.3s ease-in-out; /* Transição suave para o tamanho da fonte */
+}
+
+.header--scrolled .github-link {
+  font-size: 0.8rem; /* Diminuir tamanho da fonte em 20% */
+}
+
+/* Estilo do ícone do GitHub */
+.github-link i {
+  margin-right: 5px; /* Espaçamento à direita do ícone */
+  font-size: 1rem; /* Tamanho do ícone */
+  transition: font-size 0.3s ease-in-out; /* Transição suave para o tamanho da fonte */
+}
+
+.header--scrolled .github-link i {
+  font-size: 0.8rem; /* Diminuir tamanho do ícone em 20% */
+}
+
+/* Start Main */
+
+.main {
+  margin: 40px 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-collumn {
+  width: 82%; /* 82% da largura da tela */
+  /* margin: 0 auto; Centraliza o container */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; Espaça elementos para as extremidades */
+  align-items: center; /* Alinhamento vertical centralizado */
+  height: 100%; /* Garante que o container tenha 100% da altura do cabeçalho */
+}
+
+@keyframes gradient-animation {
+  0% {
+    background: linear-gradient(135deg, #f22522, #333333, #bfbfbf);
+  }
+  20% {
+    background: linear-gradient(135deg, #333333, #bfbfbf, #f22522);
+  }
+  40% {
+    background: linear-gradient(135deg, #bfbfbf, #f22522, #333333);
+  }
+  60% {
+    background: linear-gradient(135deg, #333333, #f22522, #bfbfbf);
+  }
+  80% {
+    background: linear-gradient(135deg, #f22522, #333333, #bfbfbf);
+  }
+  100% {
+    background: linear-gradient(135deg, #f22522, #333333, #bfbfbf);
+  }
+}
+
+/* Estilo da seção hero */
+.hero {
+  background: linear-gradient(135deg, #f22522, #333333, #bfbfbf);
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  padding: 100px 0;
+  transition: background 0.6s ease-in-out;
+  animation: gradient-animation 60s ease infinite; /* Aumenta a duração da animação */
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #fff; /* Garantir que a cor do texto seja branca */
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #fff; /* Garantir que a cor do texto seja branca */
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #fff; /* Garantir que a cor do texto seja branca */
+}
+
+.hero-button {
+  background-color: #f22522;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.hero-button:hover {
+  background-color: #c81f1c;
+}
+
+/* Estilo da seção about */
+.about {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.section-description {
+  font-size: 1rem;
+  text-align: justify; /* Justificar o texto para melhor apresentação */
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* Estilo da seção dos posts */
+.posts-list {
+  width: 100%;
+  background-color: #d1d1d1;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.posts-column {
+  width: 64%; /* 70% da largura para a coluna de posts */
+  height: auto;
+  margin: 25px 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+/* Estilo dos Posts individuais */
+.post {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.post-video {
+  width: 45%;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.post-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.post-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.post-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.post-button:hover {
+  background-color: var(--shadow-1);
+}
+
+/* Sidebar Secton */
+.sidebar {
+  width: 28%; /* 28% da largura para a sidebar */
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.trends,
+.tags,
+.advertisement {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.sidebar-title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.trends-list,
+.tags-list {
+  list-style: none;
+  padding: 0 20px;
+}
+
+.trend-item,
+.tag-item {
+  margin-bottom: 10px;
+}
+
+.trend-item a,
+.tag-item a {
+  color: var(--complementary-color-4);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.trend-item a:hover,
+.tag-item a:hover {
+  color: var(--primary-color);
+}
+
+.advertisement {
+  padding: 20px;
+  text-align: center;
+}
+
+.ad-content {
+  color: #666;
+}
+
+/* Section Pagination */
+.pagination {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin: 0 5px;
+  padding: 10px 15px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination-link:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.pagination-prev,
+.pagination-next {
+  font-weight: bold;
+}
+
+.pagination-prev {
+  margin-right: 10px;
+}
+
+.pagination-next {
+  margin-left: 10px;
+}
+
+/* Estilo do rodapé */
+.footer-top {
+  background-color: #525252; /* Ajuste de cor de fundo do rodapé */
+  background-color: ; /* Ajuste de cor de fundo do rodapé */
+  color: #fff;
+  padding: 30px 0;
+  border-bottom: 1px solid #454545;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-middle {
+  background-color: #525252; /* Ajuste de cor de fundo do rodapé */
+  color: #fff;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-bottom {
+  background-color: #333333; /* Fundo mais escuro para a seção de copyright */
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #d1d1d1;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  /* margin-bottom: 20px; */
+}
+
+.footer-button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 200px; /* Define a largura dos botões para serem iguais */
+}
+
+.footer-button i {
+  margin-right: 5px;
+}
+
+.footer-button:hover {
+  box-shadow: 0 4px 8px rgba(37, 46, 65, 0.2);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-social-link {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-social-link:hover {
+  color: var(--primary-color);
+}
+
+.footer-copyright > p {
+  margin: 0;
+  font-size: 1rem;
+  color: #f1f1f1;
+}
